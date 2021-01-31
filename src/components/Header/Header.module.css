@@ -1,0 +1,13 @@
+.header {
+  grid-area: header;
+  background-color: lightcoral;
+}
+
+.header__logo {
+  margin: 10px;
+}
+
+.header__logo img {
+  width: 40px;
+  background-color: lightcoral;
+}

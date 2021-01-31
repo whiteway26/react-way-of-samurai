@@ -1,0 +1,28 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 3fr 9fr;
+  grid-gap: 10px;
+}
+
+.dialogs > * {
+  padding: 10px;
+}
+
+.dialogs a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.dialogMessages {
+  color: white;
+}
+
+/* .dialogs a:not(:first-child) {
+  padding-bottom: 10px;
+} */
+
+.active {
+  color: gold;
+}

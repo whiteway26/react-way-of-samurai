@@ -1,0 +1,31 @@
+.nav {
+  grid-area: nav;
+  background-color: darkblue;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1em;
+  list-style: none;
+}
+
+.nav a {
+  display: inline-block;
+  font-size: 20px;
+  margin-top: 10px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #ffc91b;
+  transform: scale(0.98);
+}
+
+.nav a.active {
+  color: red;
+}
