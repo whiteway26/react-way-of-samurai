@@ -1,6 +1,20 @@
+import React from "react";
 import pi from "./ProfileInfo.module.css";
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+  let textareaRef = React.createRef();
+
+  let addPostText = (e) => {
+    props.addPost();
+    textareaRef.current.value = "";
+    e.preventDefault();
+  };
+
+  let onPostChange = () => {
+    let text = textareaRef.current.value;
+    props.updateNewPostText(text);
+  };
+
   return (
     <div>
       <form>
@@ -11,9 +25,14 @@ const ProfileInfo = () => {
             cols="50"
             rows="10"
             placeholder="Enter a message"
+            ref={textareaRef}
+            value={props.newPostText}
+            onChange={onPostChange}
           ></textarea>
         </div>
-        <button className={pi.btn}>Send</button>
+        <button className={pi.btn} onClick={addPostText}>
+          Send
+        </button>
       </form>
     </div>
   );

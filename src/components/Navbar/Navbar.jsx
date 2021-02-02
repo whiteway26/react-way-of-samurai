@@ -1,6 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import n from "./Navbar.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 function Navbar() {
   return (
     <nav className={n.nav}>
@@ -16,13 +18,19 @@ function Navbar() {
           </NavLink>
         </li>
         <li>
-          <a href="#">News</a>
+          <NavLink to="/news" activeClassName={n.active}>
+            News
+          </NavLink>
         </li>
         <li>
-          <a href="#">Music</a>
+          <NavLink to="/music" activeClassName={n.active}>
+            Music
+          </NavLink>
         </li>
         <li>
-          <a href="#">Settings</a>
+          <NavLink to="/settings" activeClassName={n.active}>
+            Settings
+          </NavLink>
         </li>
       </ul>
     </nav>
