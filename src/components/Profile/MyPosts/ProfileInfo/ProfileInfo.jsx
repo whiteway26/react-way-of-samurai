@@ -1,21 +1,19 @@
 import React from "react";
 import pi from "./ProfileInfo.module.css";
 import {
-  addPostActionCreator,
-  updateNewPostTextActionCreator,
+  addPostCreator,
+  updateNewPostTextCreator,
 } from "../../../../redux/state";
 
 const ProfileInfo = (props) => {
-  let postTextareaRef = React.createRef();
-
-  let addPostText = (e) => {
-    props.dispatch(addPostActionCreator());
+  let addNewPost = (e) => {
+    props.dispatch(addPostCreator());
     e.preventDefault();
   };
 
-  let onPostChange = () => {
-    let text = postTextareaRef.current.value;
-    props.dispatch(updateNewPostTextActionCreator(text));
+  let updateNewPostText = (e) => {
+    let text = e.target.value;
+    props.dispatch(updateNewPostTextCreator(text));
   };
 
   return (
@@ -27,13 +25,11 @@ const ProfileInfo = (props) => {
             id="msg"
             cols="50"
             rows="10"
-            placeholder="Enter a message"
-            ref={postTextareaRef}
             value={props.newPostText}
-            onChange={onPostChange}
+            onChange={updateNewPostText}
           ></textarea>
         </div>
-        <button className={pi.btn} onClick={addPostText}>
+        <button className={pi.btn} onClick={addNewPost}>
           Send
         </button>
       </form>
