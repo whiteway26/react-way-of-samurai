@@ -8,11 +8,10 @@ function Profile(props) {
     <section>
       <img src={socialMedia} alt="profile" />
       <ProfileInfo
-        addPost={props.addPost}
-        updateNewPostText={props.updateNewPostText}
-        newPostText={props.newPostText}
+        dispatch={props.dispatch}
+        newPostText={props.profilePage.newPostText}
       />
-      <MyPosts posts={props.posts} addPost={props.addPost} />
+      <MyPosts posts={props.profilePage.posts} />
     </section>
   );
 }

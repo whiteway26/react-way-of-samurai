@@ -5,14 +5,16 @@ const ProfileInfo = (props) => {
   let textareaRef = React.createRef();
 
   let addPostText = (e) => {
-    props.addPost();
+    // props.addPost();
+    props.dispatch({ type: "ADD-POST" });
     textareaRef.current.value = "";
     e.preventDefault();
   };
 
   let onPostChange = () => {
     let text = textareaRef.current.value;
-    props.updateNewPostText(text);
+    // props.updateNewPostText(text);
+    props.dispatch({ type: "UPDATE-NEW-POST-TEXT", newText: text });
   };
 
   return (
