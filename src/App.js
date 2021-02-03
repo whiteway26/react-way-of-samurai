@@ -19,6 +19,8 @@ const App = (props) => {
                 <Dialogs
                   dialogs={props.state.messagePage.dialogs}
                   messages={props.state.messagePage.messages}
+                  newMessage={props.state.messagePage.newMessage}
+                  dispatch={props.dispatch}
                 />
               )}
             />

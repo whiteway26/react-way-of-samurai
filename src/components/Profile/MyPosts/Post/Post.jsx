@@ -5,7 +5,7 @@ import avatarImg from "../../../../assets/images/avatar.png";
 function Post(props) {
   return (
     <div className={p.post}>
-      <img src={avatarImg} />
+      <img src={avatarImg} alt="avatar" />
       <p>{props.message}</p>
       <p>like {props.likesCount}</p>
     </div>
