@@ -29,3 +29,20 @@
 .nav a.active {
   color: red;
 }
+
+.friendContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+.friend {
+  display: flex;
+  align-items: center;
+}
+
+.friendLogo {
+  display: inline;
+  width: 50px;
+}

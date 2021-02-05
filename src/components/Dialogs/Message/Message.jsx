@@ -1,11 +1,7 @@
-import d from "../Dialogs.module.css";
+// import d from "../../Dialogs/Dialogs.module.css";
 
 const Message = (props) => {
-  return (
-    <div>
-      <div className={d.message}>{props.message}</div>
-    </div>
-  );
+  return <div>{props.message}</div>;
 };
 
 export default Message;

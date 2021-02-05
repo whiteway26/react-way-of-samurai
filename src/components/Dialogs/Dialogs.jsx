@@ -1,25 +1,42 @@
+// import MessageInputContainer from "./MessageInput/MessageInputContainer";
 import Dialog from "./Dialog/Dialog";
-import d from "./Dialogs.module.css";
 import Message from "./Message/Message";
-import MessageInput from "./MessageInput/MessageInput";
+// import d from "./Dialogs.module.css";
 
 const Dialogs = (props) => {
-  const dialogElements = props.dialogsPage.dialogs.map((d) => {
-    return <Dialog name={d.name} id={d.id} />;
+  let state = props.dialogsPage;
+  let dialogElements = state.dialogs.map((d) => {
+    return <Dialog id={d.id} name={d.name} />;
   });
-
-  const messageElements = props.dialogsPage.messages.map((m) => {
+  let messageElements = state.messages.map((m) => {
     return <Message message={m.message} />;
   });
 
+  const sendNewMessage = (e) => {
+    props.sendMessage();
+    e.preventDefault();
+  };
+
+  const updateNewMessageBody = (e) => {
+    let body = e.target.value;
+    props.updateMessageBody(body);
+  };
+
   return (
-    <section className={d.dialogs}>
-      <div className={d.dialogPersons}>{dialogElements}</div>
-      <div className={d.dialogMessages}>{messageElements}</div>
-      <MessageInput
-        dispatch={props.dispatch}
-        newMessageBody={props.dialogsPage.newMessageBody}
-      />
+    <section>
+      <div>{dialogElements}</div>
+      <div>{messageElements}</div>
+      <div>
+        <form>
+          <div>
+            <textarea
+              value={props.dialogsPage.newMessageBody}
+              onChange={updateNewMessageBody}
+            ></textarea>
+            <button onClick={sendNewMessage}>Send</button>
+          </div>
+        </form>
+      </div>
     </section>
   );
 };
