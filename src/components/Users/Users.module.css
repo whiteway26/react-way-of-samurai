@@ -1,0 +1,23 @@
+.userAvatar {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.container {
+  display: flex;
+  background-color: lightgray;
+  width: 90%;
+  margin: 0 auto 20px;
+}
+
+.btn {
+  display: block;
+  padding: 5px 10px;
+  margin: 10px;
+  color: white;
+  font-size: 20px;
+  background-color: darkgoldenrod;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}

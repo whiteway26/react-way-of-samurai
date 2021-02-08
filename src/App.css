@@ -21,9 +21,5 @@
 
 .app-wrapper-content {
   grid-area: content;
-  background-color: lightseagreen;
-}
-
-.app-wrapper-content img {
-  max-width: 100%;
+  background-color: lightgray;
 }

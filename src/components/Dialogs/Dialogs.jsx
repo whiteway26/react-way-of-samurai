@@ -1,7 +1,7 @@
 // import MessageInputContainer from "./MessageInput/MessageInputContainer";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
-// import d from "./Dialogs.module.css";
+import d from "./Dialogs.module.css";
 
 const Dialogs = (props) => {
   let state = props.dialogsPage;
@@ -23,20 +23,17 @@ const Dialogs = (props) => {
   };
 
   return (
-    <section>
-      <div>{dialogElements}</div>
-      <div>{messageElements}</div>
-      <div>
-        <form>
-          <div>
-            <textarea
-              value={props.dialogsPage.newMessageBody}
-              onChange={updateNewMessageBody}
-            ></textarea>
-            <button onClick={sendNewMessage}>Send</button>
-          </div>
-        </form>
-      </div>
+    <section className={d.container}>
+      <div className={d.dialogs}>{dialogElements}</div>
+      <div className={d.messages}>{messageElements}</div>
+      <form className={d.form}>
+        <textarea
+          cols="45"
+          value={props.dialogsPage.newMessageBody}
+          onChange={updateNewMessageBody}
+        ></textarea>
+        <button onClick={sendNewMessage}>Send</button>
+      </form>
     </section>
   );
 };

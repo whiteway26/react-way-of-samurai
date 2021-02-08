@@ -6,8 +6,10 @@ function Post(props) {
   return (
     <div className={p.post}>
       <img src={avatarImg} alt="avatar" />
-      <p>{props.message}</p>
-      <p>like {props.likesCount}</p>
+      <div className={p.text}>
+        <p>{props.message}</p>
+        <p>like {props.likesCount}</p>
+      </div>
     </div>
   );
 }

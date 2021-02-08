@@ -1,4 +1,5 @@
 import Post from "./Post/Post";
+import mp from "./MyPosts.module.css";
 
 const MyPosts = (props) => {
   let postElements = props.posts.map((p) => {
@@ -16,21 +17,19 @@ const MyPosts = (props) => {
   };
 
   return (
-    <div>
-      <h3>My Posts</h3>
+    <section className={mp.container}>
+      <h2>My Posts</h2>
       <form>
-        <div>
-          <textarea
-            onChange={updateNewPostText}
-            value={props.newPostText}
-          ></textarea>
-        </div>
-        <div>
-          <button onClick={addNewPost}>Add</button>
-        </div>
+        <textarea
+          onChange={updateNewPostText}
+          value={props.newPostText}
+          cols="50"
+          rows="5"
+        ></textarea>
+        <button onClick={addNewPost}>Add</button>
       </form>
-      <div>{postElements}</div>
-    </div>
+      <div className={mp.posts}>{postElements}</div>
+    </section>
   );
 };
 
